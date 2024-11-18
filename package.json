@@ -1,0 +1,28 @@
+{
+  "name": "owner-tool",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/owner.umd.cjs",
+  "module": "./dist/owner.js",
+  "types": "./dist/types/index.d.ts",
+  "browser": "./dist/owner.iife.js",
+  "exports": {
+    "types": "./dist/types/index.d.ts",
+    "import": "./dist/owner.js",
+    "require": "./dist/owner.umd.cjs",
+    "browser": "./dist/owner.iife.js"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build"
+  },
+  "devDependencies": {
+    "typescript": "~5.6.3",
+    "vite": "^5.4.9",
+    "vite-plugin-dts": "^4.3.0"
+  }
+}
