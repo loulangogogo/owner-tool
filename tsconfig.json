@@ -1,28 +1,45 @@
 {
   "compilerOptions": {
+    // 指定编译后的代码目标为 ES2020，现代浏览器和 Node.js 大部分版本都支持。
     "target": "ES2020",
+    // 字段初始化通过 Object.defineProperty 定义，与 ECMAScript 标准一致。如果为false标识可以直接进行赋值操作
     "useDefineForClassFields": true,
+    // 输出模块格式为 ESNext，适合现代打包工具（如 Vite 或 Rollup）处理。
     "module": "ESNext",
+    // 添加额外的标准库支持：ES2020：为现代 ECMAScript 提供 API 支持。DOM 和 DOM.Iterable：支持浏览器 DOM API 和可迭代的 DOM 对象。
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    // TypeScript 中的一个编译选项，表示 跳过类型库（lib 文件）检查。这可以用来加速编译，同时避免由于外部依赖的类型定义文件不完善或存在冲突导致的编译错误。
     "skipLibCheck": true,
 
     /* Bundler mode */
+    // 使用 Bundler 风格的模块解析方式（适合 Vite/Webpack 等工具链），可简化模块解析。
     "moduleResolution": "Bundler",
+    // 允许导入带 .ts 扩展名的文件，通常在 Bundler 环境下很实用。
     "allowImportingTsExtensions": true,
+    // 强制每个文件作为独立模块编译，确保可以无缝使用 ES 模块工具。
     "isolatedModules": true,
+    // 强制所有文件都视为模块，避免歧义。
     "moduleDetection": "force",
+    // 阻止 TypeScript 编译器输出 JavaScript 文件，仅用于类型检查。
     "noEmit": true,
 
     /* Linting */
+    // 开启所有严格模式检查，提升代码质量。
     "strict": true,
+    // 禁止未使用的局部变量
     "noUnusedLocals": true,
+    // 禁止未使用的函数参数。
     "noUnusedParameters": true,
+    // 防止 switch 语句中未显式处理的情况（例如，漏写 break）。
     "noFallthroughCasesInSwitch": true,
+    // 防止导入模块时，忽略可能的副作用检查。
     "noUncheckedSideEffectImports": true,
 
+    // 启用类型声明文件的生成（.d.ts 文件）。
     "declaration": true,
+    // 只生成 .d.ts 声明文件，不生成 .js 文件。
     "emitDeclarationOnly": true,
   },
-  "include": ["lib"],
-  "exclude": ["node_modules", "dist"]
+  // 指定只包含 lib 目录中的文件。
+  "include": ["lib"]
 }

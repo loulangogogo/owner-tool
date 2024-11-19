@@ -1,7 +1,6 @@
 {
-  "name": "owner-tool",
-  "private": true,
-  "version": "0.0.0",
+  "name": "owner-tool-js",
+  "version": "3.0.2",
   "type": "module",
   "files": [
     "dist"
@@ -17,12 +16,17 @@
     "browser": "./dist/owner.iife.js"
   },
   "scripts": {
+    "test-file": "npx vitest ./test/numberTool.test.ts",
     "dev": "vite",
-    "build": "tsc && vite build"
+    "build": "tsc && vite build",
+
+    "push": "npm publish",
+    "delete": "npm unpublish owner-tool-js@3.0.1"
   },
   "devDependencies": {
     "typescript": "~5.6.3",
     "vite": "^5.4.9",
-    "vite-plugin-dts": "^4.3.0"
+    "vite-plugin-dts": "^4.3.0",
+    "vitest": "^2.1.5"
   }
 }
