@@ -1,7 +1,7 @@
 # owner-tool-js
 
 &emsp;&emsp;owner-tool-js是js工具包，内部包含各种js常用工具方法【并在不断的更新】。如有问题
-请在[gitee的issue](https://gitee.com/loulan_yxq/owner-tool/issues) 提出说明；
+请在[github的issue](https://github.com/loulangogogo/owner-tool/issues) 提出说明；
 
 &emsp;&emsp;**_如果您有好的方法也可以直接在上面提出，并注明您的邮箱。_**
 
@@ -15,19 +15,25 @@
 &emsp;&emsp;2.0.0之后的版本采用的是ts代码写的源码，并且对不同功能的方法进行了命名空间的区分，使用
 的时候更加的方便，打包之后带有ts声明，可以直接在ts代码中引入使用。
 
+&emsp;&emsp;3.0.0之后的版本采用的依旧是ts进行打包的，支持ts开发使用，3.0.0之后主要是对文件位置以及形式进行了调整，不影响从2.0.0之后的更新使用。
+
 ## 工具包说明（命名空间）
 >具体的方法说明请进入方法定义文件查看
 - ### core 核心基础包
 ```ts
 import * as $L from 'owner-tool-js';
+import {coreTool} from 'owner-tool-js';
 
 let data = undefined;
 $L.core.isEmpty(data);
+coreTool.isEmpty(data);
 ```
 
 - ### arrayTool 数组工具包
 ```ts
 import * as $L from 'owner-tool-js';
+import {arrayTool} from 'owner-tool-js';
+
 let arr = [
     {
         "id": "1",
@@ -49,11 +55,14 @@ let arr = [
 ];
 
 let arrayToTree = $L.arrayTool.arrayToTree(arr, "id", "pid", "-1");
+
+let arrayToTree2 = arrayTool.arrayToTree(arr, "id", "pid", "-1");
 ```
 
 - ### functionTool 函数方法工具包
 ```ts
 import * as $L from 'owner-tool-js';
+import {functionTool} from 'owner-tool-js';
 
 let data1 = {
     a: 1,
